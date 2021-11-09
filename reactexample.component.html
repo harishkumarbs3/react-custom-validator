@@ -1,0 +1,11 @@
+<h3>Registration form</h3>
+<form [formGroup]="loginform" (ngSubmit)="submit()">
+    <div style="border:1px solid black;height: 50%;width:30%;padding: 10px; ">
+        <label>Name</label><input type="text" formControlName="name">
+        <span style="color: red;" *ngIf="isSubmitted && loginform.controls.name?.errors?.required">name required</span><br><br>
+        <label>Email</label><input type="email" formControlName="email">
+        <span style="color: red;" *ngIf="isSubmitted && loginform.controls.email?.errors?.required">Email required</span>
+        <span style="color: red;" *ngIf="isSubmitted && loginform.controls.email?.errors?.email">Enter valid email</span><br><br>
+        <button type="submit">submit</button>
+    </div>
+</form>
